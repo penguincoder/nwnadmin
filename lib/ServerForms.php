@@ -33,10 +33,10 @@ class ServerSettings extends Horde_Form
                 '1' => 'Server Characters Only')));
         $this->addVariable(_("Enforce Legal Characters"), 'elc', 'enum',
                 true, false, null, array(array(
-                '0' => 'Enforce Legal Characters', '1' => 'Any Characters')));
+                '1' => 'Enforce Legal Characters', '0' => 'Any Characters')));
         $this->addVariable(_("Item Level Restrictions"), 'ilr', 'enum',
                 true, false, null, array(array(
-                '0' => 'Enforce Item Restrictions', '1' => 'Any Items')));
+                '1' => 'Enforce Item Restrictions', '0' => 'Any Items')));
         $this->addVariable(_("Game Type"), 'gametype', 'enum', true,
                 false, null, array(array('0' => 'Action', '1' => 'Story',
                 '2' => 'Story Lite', '3' => 'Role Play', '4' => 'Team',
@@ -55,8 +55,8 @@ class ServerSettings extends Horde_Form
                 true, false, null, array(array('0' => 'Persistent Module',
                 '1' => 'Reload When Empty')));
         $this->addVariable(_("Server Visibility"), 'publicserver', 'enum',
-                true, false, null, array(array('1' => 'Private',
-                '0' => 'Public')));
+                true, false, null, array(array('0' => 'Private',
+                '1' => 'Public')));
 
         $this->setTitle(_("Configure Server Settings"));
         $this->setButtons(_("Update Config"));

@@ -67,7 +67,8 @@ if ($valid) {
             }
         }
         if (!is_a($result, 'PEAR_Error')) {
-            $notification->push(_("Server settings loaded successfully."),
+            $notification->push(_("Server settings loaded successfully. " .
+                    "Some settings require a server restart to take effect!"),
                     'horde.success');
         }
     }

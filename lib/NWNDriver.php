@@ -172,13 +172,9 @@ class NWNDriver
         unset($settings['module']);
         $settingString = '';
         foreach ($settings as $key => $val) {
-            if (!empty($val)) {
-                if (is_int($val)) {
-                    $settingString .= sprintf(" -%s %s ", $key, $val);
-                } else {
-                    $settingString .= sprintf(" -%s '%s' ", $key,
-                            escapeshellcmd($val));
-                }
+            if (!is_null($val) && $val !== '') {
+                $settingString .= sprintf(" -%s '%s' ", $key,
+                        escapeshellcmd($val));
             }
         }
         shell_exec(NWNAdmin::getServerExecutable() .$settingString . ' > ' .
