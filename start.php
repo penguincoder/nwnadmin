@@ -33,6 +33,7 @@ case 'stop':
                 $result->getMessage(), 'horde.error');
     } else {
         $notification->push(_("The server was stopped."), 'horde.success');
+        sleep(2);
     }
     break;
 case 'start':
