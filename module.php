@@ -39,7 +39,7 @@ if (isset($actionId) && !isset($moduleName)) {
         break;
     case 'activate':
         if ($admin) {
-            $result = $nwndriver->useModule($moduleName);
+            $result = $nwndriver->useModule($moduleName, true);
             if (is_a($result, 'PEAR_Error')) {
                 $notification->push(
                         _("Module load failure: ") .

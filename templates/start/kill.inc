@@ -8,16 +8,6 @@ class="button" /></td></tr>
 
 <br />
 
-<form name="restartserver" action="<?php echo Horde::selfUrl() ?>"
-method="POST"><table width="100%" cellpadding="0" cellspacing="0">
-<tr class="header"><td class="header">Restart Server</td></tr>
-<tr class="control"><td class="control"><input type="hidden" name="actionId"
-value="restart" /><input type="submit" name="submitbutton" value="Restart"
-class="button" /></td></tr>
-</table></form>
-
-<br />
-
 <form name="killserver" action="<?php echo Horde::selfUrl() ?>"
 method="POST"><table width="100%" cellpadding="0" cellspacing="0">
 <tr class="header"><td class="header">Kill Server</td></tr>

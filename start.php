@@ -26,7 +26,6 @@ if (!$params || is_a($params, 'PEAR_Error') ||
 $actionId = Util::getFormData('actionId');
 switch ($actionId) {
 case 'stop':
-case 'restart':
     $wait = true;
     $result = $nwndriver->stopServer();
     if (is_a($result, 'PEAR_Error')) {
@@ -35,7 +34,7 @@ case 'restart':
     } else {
         $notification->push(_("The server was stopped."), 'horde.success');
     }
-    if ($actionId == 'stop') { break; }
+    break;
 case 'start':
     $wait = true;
     $result = $nwndriver->startServer();

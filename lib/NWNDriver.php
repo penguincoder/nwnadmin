@@ -225,14 +225,32 @@ class NWNDriver
         return $data;
     }
 
-    function useModule($moduleName)
+    function useModule($moduleName, $flush = false)
     {
         $settings = &$this->_settingsbackend->getSettings();
         $settings['module'] = $moduleName;
         if ($this->serverRunning()) {
-            $this->sendCommand('module ' . $moduleName);
+            $this->sendCommand('module ' . $moduleName, $flush);
+            sleep(2);
+            $result = $this->getLogContent();
+            $lines = explode("\n", $result);
+            $found = false;
+            foreach ($lines as $l) {
+                $l = trim($l);
+                if (!strpos($l, $moduleName) && strpos($l, 'Module loaded')) {
+                    $found = true;
+                }
+            }
+            if (!$found) {
+                unset($settings['module']);
+                $this->_settingsbackend->setData($settings);
+                return PEAR::raiseError(_("Could not load the module!"));
+            }
+        } else {
+            $result = PEAR::raiseError(_("Server is not running!"));
         }
-        return $this->_settingsbackend->setData($settings);
+        $this->_settingsbackend->setData($settings);
+        return true;
     }
 
     function getModule()
