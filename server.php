@@ -41,7 +41,7 @@ if ($valid) {
         'elc' => Util::getFormData('elc'),
         'ilr' => Util::getFormData('ilr'),
         'gametype' => Util::getFormData('gametype'),
-        'onetype' => Util::getFormData('oneparty'),
+        'oneparty' => Util::getFormData('oneparty'),
         'difficulty' => Util::getFormData('difficulty'),
         'autosaveinterval' => Util::getFormData('autosaveinterval'),
         'reloadwhenempty' => Util::getFormData('reloadwhenempty'),
