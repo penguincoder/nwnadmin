@@ -230,11 +230,11 @@ class NWNDriver
             sleep(2);
             $result = $this->getLogContent();
             $lines = explode("\n", $result);
-            $found = false;
+            $found = true;
             foreach ($lines as $l) {
                 $l = trim($l);
-                if (!strpos($l, $moduleName) && strpos($l, 'Module loaded')) {
-                    $found = true;
+                if (!strpos($l, $moduleName) && strpos($l, 'Unable')) {
+                    $found = false;
                 }
             }
             if (!$found) {
