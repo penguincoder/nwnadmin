@@ -261,7 +261,7 @@ class NWNDriver
             $fifoName = Horde::getTempDir() . '/nwnadmin-input';
         }
         if (!file_exists($fifoName) &&
-            !posix_mkfifo($fifoName)) {
+            !posix_mkfifo($fifoName, 0640)) {
             $fifoName = '';
         }
         return $fifoName;
