@@ -32,8 +32,9 @@ case 'stop':
         $notification->push(_("There was a problem stopping the server: ") .
                 $result->getMessage(), 'horde.error');
     } else {
-        $notification->push(_("The server was stopped."), 'horde.success');
-        sleep(2);
+        $notification->push(
+                _("The server was stopped. Reload if still running."),
+                'horde.success');
     }
     break;
 case 'start':
