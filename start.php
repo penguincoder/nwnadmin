@@ -12,7 +12,7 @@ $wait = false;
 
 // no regular users allowed on this page
 if (!Auth::isAdmin('nwnadmin:admin')) {
-    header('Location: ' . Horde::applicationUrl('server.php'));
+    header('Location: ./server.php');
 }
 
 // hack the page if the server is not configured

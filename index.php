@@ -12,5 +12,5 @@ if (!$nwnadmin_configured) {
     Horde_Test::configFilesMissing('NWNAdmin', NWNADMIN_BASE,
         array('conf.php'));
 } else {
-    header('Location: ./start.php');
+    require NWNADMIN_BASE . '/start.php';
 }
