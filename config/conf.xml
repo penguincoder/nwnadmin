@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- $Id: conf.xml,v 1.1 2005/01/23 03:05:35 penguinc Exp $ -->
+<configuration>
+ <configtab name="general" desc="General Settings">
+  <configheader name="serversettings" desc="Server Settings">Server Settings</configheader>
+  <configsection name="server" desc="Server Settings">
+   <configstring name="root" desc="Server File Root">/usr/local/games/nwn</configstring>
+   <configstring name="binary" desc="Server Executable">nwserver</configstring>
+  </configsection>
+
+  <configheader name="systemsettings" desc="System Settings">System
+Settings</configheader>
+  <configsection name="system" desc="System Settings">
+   <configstring name="ps"
+    desc="PS Binary">/bin/ps</configstring>
+   <configstring name="grep"
+    desc="Grep Binary">/bin/grep</configstring>
+   <configstring name="echo"
+    desc="Echo Binary">/usr/bin/echo</configstring>
+  </configsection>
+ </configtab>
+
+ <configtab name="menu" desc="Menu">
+  <configsection name="menu" desc="Menu Settings">
+   <configmultienum name="apps" desc="Select any applications that should be linked in PenguinCoder's menu">
+    <values>
+     <configspecial name="list-horde-apps" />
+    </values>
+   </configmultienum>
+  </configsection>
+ </configtab>
+</configuration>
