@@ -169,6 +169,7 @@ class NWNDriver
         global $conf;
         chdir(NWNAdmin::getServerRoot());
         $settings = &$this->_settingsbackend->getSettings();
+        unset($settings['module']);
         $settingString = '';
         foreach ($settings as $key => $val) {
             if (!empty($val)) {
@@ -180,11 +181,9 @@ class NWNDriver
                 }
             }
         }
-        //echo '<pre>' . NWNAdmin::getServerExecutable() .$settingString . ' > ' .
-        //        $this->_getLog() . ' 2>&1 < ' . $this->_checkFifo() . ' &</pre>';
         shell_exec(NWNAdmin::getServerExecutable() .$settingString . ' > ' .
                 $this->_getLog() . ' 2>&1 < ' . $this->_checkFifo() . ' &');
-
+        $this->_settingsbackend->setData($settings);
         return true;
     }
 

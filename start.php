@@ -56,6 +56,7 @@ case 'kill':
         $notification->push(_("The server was killed."), 'horde.warning');
     }
 case 'raw':
+    $wait = true;
     $result = $nwndriver->sendCommand(Util::getFormData('command'), true);
     if (is_a($result, 'PEAR_Error')) {
         $notification->push(_("There was a problem sending the command: ") .

@@ -55,8 +55,8 @@ class ServerSettings extends Horde_Form
                 true, false, null, array(array('0' => 'Persistent Module',
                 '1' => 'Reload When Empty')));
         $this->addVariable(_("Server Visibility"), 'publicserver', 'enum',
-                true, false, null, array(array('0' => 'Private',
-                '1' => 'Public')));
+                true, false, null, array(array('1' => 'Private',
+                '0' => 'Public')));
 
         $this->setTitle(_("Configure Server Settings"));
         $this->setButtons(_("Update Config"));
