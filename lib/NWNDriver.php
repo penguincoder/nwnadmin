@@ -247,7 +247,7 @@ class NWNDriver
                 return PEAR::raiseError(_("Could not load the module!"));
             }
         } else {
-            $result = PEAR::raiseError(_("Server is not running!"));
+            return PEAR::raiseError(_("Server is not running!"));
         }
         $this->_settingsbackend->setData($settings);
         return true;
